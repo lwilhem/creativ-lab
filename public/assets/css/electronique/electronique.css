@@ -13,14 +13,40 @@ section .informations h1 {
 section .informations p {
   text-align: justify;
 }
-
-* {
-  box-sizing: border-box;
+section .slider {
+  margin-bottom: 10%;
+}
+section .tutoriels {
+  padding: 90px 200px;
+}
+section .tutoriels h1 {
+  text-align: center;
+  font-size: 45px;
+  color: deeppink;
+  text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
+}
+section .tutoriels p {
+  text-align: justify;
+}
+section .tutoriels .etapes {
+  align-items: center;
+  display: flex;
+  gap: 300px;
+  margin-bottom: 2.5%;
+}
+section .tutoriels .etapes h3 {
+  color: mediumvioletred;
+}
+section hr {
+  background: mediumturquoise;
+  width: 75%;
+  height: 3px;
+  border: none;
 }
 
-body {
-  font-family: Verdana, sans-serif;
-  margin: 0;
+/* SLIDER DES IMAGES */
+* {
+  box-sizing: border-box;
 }
 
 .mySlides {
@@ -31,14 +57,12 @@ img {
   vertical-align: middle;
 }
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -54,18 +78,15 @@ img {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -76,7 +97,6 @@ img {
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -85,7 +105,6 @@ img {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -101,7 +120,6 @@ img {
   background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -115,10 +133,215 @@ img {
     opacity: 1;
   }
 }
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next, .text {
     font-size: 11px;
+  }
+}
+/* DIV SLIDER */
+.carousel {
+  padding: 70px 200px;
+  /********************************
+  * Carousel styles
+  *********************************/
+  /********************************
+  * Breakpoints
+  *********************************/
+}
+.carousel a {
+  color: inherit;
+  transition: 0.25s all ease-in-out;
+}
+.carousel a:visited {
+  color: #3d4852;
+}
+.carousel a:hover,
+.carousel a:focus,
+.carousel a:active {
+  background-color: #3d4852;
+  color: white;
+}
+.carousel a:focus {
+  outline: thin solid #3d4852;
+}
+.carousel a:hover,
+.carousel a:active {
+  outline: 0;
+}
+.carousel a.button {
+  align-items: center;
+  background-color: #3d4852;
+  border: 1px solid #3d4852;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+.carousel a.button:hover,
+.carousel a.button:focus {
+  background-color: #58636F;
+  box-shadow: 0 0 2px 2px #bac6d3;
+}
+.carousel a.button:focus {
+  outline: 1px solid #3d4852;
+}
+.carousel a.button:visited {
+  color: #fff;
+}
+.carousel ul {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.carousel li {
+  display: inline-block;
+}
+.carousel svg {
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.carousel img {
+  height: auto;
+  margin-bottom: 0.5rem;
+  max-width: calc(100% + 2rem);
+  position: relative;
+  left: -1rem;
+  right: -1rem;
+}
+.carousel p {
+  margin: 0 0 0.5rem;
+}
+.carousel main {
+  padding: 1rem 2rem;
+  margin: auto;
+}
+.carousel header {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.carousel .card {
+  text-align: justify;
+  border: 1px solid #bac6d3;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.carousel .card-title {
+  font-size: 15px;
+}
+.carousel .carousel-items {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.carousel .carousel-item {
+  flex: 1 0 250px;
+  margin-left: 1rem;
+  scroll-snap-align: start;
+}
+.carousel ::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+.carousel ::-webkit-scrollbar {
+  height: 6px;
+  background-color: #F5F5F5;
+}
+.carousel ::-webkit-scrollbar-thumb {
+  background-color: #3d4852;
+  border-radius: 3px;
+}
+@media screen and (min-width: 576px) {
+  .carousel .carousel-item {
+    flex-basis: 300px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .carousel body,
+.carousel button,
+.carousel input,
+.carousel select,
+.carousel optgroup,
+.carousel textarea {
+    font-size: 1.125rem;
+  }
+  .carousel h1 {
+    font-size: 2.75rem;
+  }
+  .carousel .carousel-item {
+    flex-basis: 325px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .carousel h1 {
+    font-size: 4rem;
+  }
+  .carousel .carousel-item {
+    flex-basis: 265px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .carousel body,
+.carousel button,
+.carousel input,
+.carousel select,
+.carousel optgroup,
+.carousel textarea {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .informations {
+    padding: 15px !important;
+  }
+
+  .tutoriels {
+    padding: 0 !important;
+  }
+  .tutoriels h1 {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+  .tutoriels .etapes {
+    align-items: center;
+    display: flex;
+    gap: 0 !important;
+    margin-bottom: 2.5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .carousel {
+    padding: 15px !important;
+  }
+
+  .carousel-item {
+    flex-basis: 350px !important;
+  }
+
+  .slider {
+    padding: 10px 20px;
+  }
+
+  hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .etapes-detail {
+    padding: 5px 25px;
+  }
+
+  .topnav a {
+    text-transform: uppercase;
+    font-size: 10px !important;
   }
 }
 

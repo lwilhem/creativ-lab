@@ -87,6 +87,9 @@ section .content .content-txt .impression3D-btn a:hover {
     justify-content: center;
     align-items: center;
   }
+  section .synopsis h1 {
+    text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
+  }
   section .content {
     gap: 25px !important;
     align-items: center !important;

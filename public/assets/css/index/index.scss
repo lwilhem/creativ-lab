@@ -92,6 +92,9 @@ section {
       align-content: center;
       justify-content: center;
       align-items: center;
+      h1 {
+        text-shadow: 2px 2px 4px rgb(133 133 133 / 62%);
+      }
     }
     .content {
       gap: 25px !important;
