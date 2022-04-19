@@ -17,7 +17,6 @@ class AppFixtures extends Fixture
             $ticket->setOpenedBy('email.'.$i.'@edu.devinci.fr');
             $ticket->setFile('public/file/tickets/ticket-'.$i);
             $ticket->setIsHandled(false);
-            $ticket->setCreatedAt(new \DateTime());
             $manager->persist($ticket);
         }
         $manager->flush();

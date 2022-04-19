@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TicketRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: TicketRepository::class)]
 class Ticket
@@ -14,16 +15,21 @@ class Ticket
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $openedBy;
+    private ?string $openedBy;
 
     #[ORM\Column(type: 'boolean')]
-    private $isHandled;
+    private ?bool $isHandled;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $file;
+    private ?string $file;
 
+    #[Gedmo\Timestampable(on: 'create')]
     #[ORM\Column(type: 'datetime')]
-    private $createdAt;
+    private ?\DateTimeInterface $createdAt;
+
+    #[Gedmo\Timestampable(on: 'update')]
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $closedAt;
 
     public function getId(): ?int
     {
@@ -74,6 +80,18 @@ class Ticket
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getClosedAt(): ?\DateTimeInterface
+    {
+        return $this->closedAt;
+    }
+
+    public function setClosedAt(\DateTimeInterface $closedAt): self
+    {
+        $this->closedAt = $closedAt;
 
         return $this;
     }

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 class Project
@@ -19,9 +20,11 @@ class Project
     #[ORM\Column(type: 'string', length: 255)]
     private $author;
 
+    #[Gedmo\Timestampable(on: 'create')]
     #[ORM\Column(type: 'datetime')]
     private $createdAt;
 
+    #[Gedmo\Timestampable(on: 'update')]
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
 
@@ -29,10 +32,10 @@ class Project
     private $content;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $main_picture;
+    private string $main_picture;
 
     #[ORM\Column(type: 'array')]
-    private $project_pictures = [];
+    private array $project_pictures = [];
 
     public function getId(): ?int
     {
