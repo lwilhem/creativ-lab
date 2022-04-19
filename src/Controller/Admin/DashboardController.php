@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Posts;
 use App\Entity\Ticket;
+use App\Entity\Tickets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -37,6 +38,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Posts', 'fa fa-home', Posts::class);
-        yield MenuItem::linkToRoute('homePage', 'fa fa-home', 'homepage');
+        yield MenuItem::linkToRoute('Back to Home', 'fa fa-home', 'homepage');
     }
 }
