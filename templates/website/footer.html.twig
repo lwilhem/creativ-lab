@@ -1,0 +1,46 @@
+{% block body %}
+<link rel="stylesheet" href="{{ asset('assets/css/footer/footer.css') }}">
+<!---- ------ ------>
+<div class="footer">
+    <div class="white-footer">
+        <div class="white-content">
+            <div class="propos">
+                <h4>A PROPOS DU FABLAB</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum dui eget dolor pellentesque. In pharetra sed morbi elementum. Est penatibus pellentesque sagittis malesuada facilisi. Turpis lectus maecenas quis eros, et. Diam commodo condimentum pharetra laoreet laoreet. Pharetra massa nam.</p>
+            </div>
+            <div class="projets-recent">
+                <h4>DERNIERS PROJETS ÉTUDIANTS</h4>
+                <div class="projets-img">
+                    <a href="#projet1"><img src="{{ asset('assets/IMG/footer/projet1.png') }}"></a>
+                    <a href="#projet2"><img src="{{ asset('assets/IMG/footer/projet2.png') }}"></a>
+                    <a href="#projet3"><img src="{{ asset('assets/IMG/footer/projet3.png') }}"></a>
+                    <a href="#projet4"><img src="{{ asset('assets/IMG/footer/projet4.png') }}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-footer">
+        <div class="gray-content">
+            <div class="footer-credits">
+                <div>© 2022 DeVinci FabLab.</div>
+                <div class="footer-btn">
+                    <a href="#mentions">Mentions Légales</a>
+                    <a href="#informations">Informations Pratiques</a>
+                </div>
+            </div>
+            <div class="social-and-logo">
+                <div class="footer-social">
+                    <a href="#facebook"><img src="{{ asset('assets/IMG/footer/facebook.png') }}"</a>
+                    <a href="#twitter"><img src="{{ asset('assets/IMG/footer/twitter.png') }}"</a>
+                    <a href="#instagram"><img src="{{ asset('assets/IMG/footer/instagram.png') }}"</a>
+                </div>
+                <div class="footer-logo">
+                    <a href="#home"><img src="{{ asset('assets/IMG/footer/logo.png') }}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!---- ------ ------>
+    <script rel="script" src="{{ asset('assets/js/footer/footer.js') }}"></script>
+{% endblock %}

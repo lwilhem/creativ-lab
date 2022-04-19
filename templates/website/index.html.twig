@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DevLab | Page d'accueil{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/index/index.css') }}">
+    <!---- ------ ------>
+    {{ include('website/header.html.twig') }}
+    <!---- ------ ------>
+    <section>
+        <div class="main-img">
+            <img src="{{ asset('assets/IMG/index/main-img.png') }}">
+        </div>
+        <div class="synopsis">
+            <h1>Creativ' Lab</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="content">
+            <div class="content-img">
+                <h1 style="color: deeppink">Pôle Électronique</h1>
+                <img src="{{ asset('assets/IMG/index/electronique.png') }}">
+            </div>
+            <div class="content-txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum dui eget dolor pellentesque. In pharetra sed morbi elementum. Est penatibus pellentesque sagittis malesuada facilisi. Turpis lectus maecenas quis eros, et. Diam commodo condimentum pharetra laoreet laoreet. Pharetra massa nam.</p>
+                <div class="electronique-btn">
+                    <a href="electronique.html.twig">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-img">
+                <h1 style="color: darkorange">Pôle Prototypage</h1>
+                <img src="{{ asset('assets/IMG/index/prototypage.png') }}">
+            </div>
+            <div class="content-txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum dui eget dolor pellentesque. In pharetra sed morbi elementum. Est penatibus pellentesque sagittis malesuada facilisi. Turpis lectus maecenas quis eros, et. Diam commodo condimentum pharetra laoreet laoreet. Pharetra massa nam.</p>
+                <div class="prototypage-btn">
+                    <a href="{{ asset('projets.html.twig') }}">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-img">
+                <h1 style="color:gold">Pôle Impression3D</h1>
+                <img src="{{ asset('assets/IMG/index/impression3D.png') }}">
+            </div>
+            <div class="content-txt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum dui eget dolor pellentesque. In pharetra sed morbi elementum. Est penatibus pellentesque sagittis malesuada facilisi. Turpis lectus maecenas quis eros, et. Diam commodo condimentum pharetra laoreet laoreet. Pharetra massa nam.</p>
+                <div class="impression3D-btn">
+                    <a href="{{ asset('impression.html.twig') }}">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---- ------ ------>
+    {{ include('website/footer.html.twig') }}
+    <!---- ------ ------>
+    <script rel="script" src="{{ asset('assets/js/index/index.js') }}"></script>
+{% endblock %}

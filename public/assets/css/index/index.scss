@@ -1,0 +1,128 @@
+section {
+  p {
+    margin: 0;
+  }
+  .main-img {
+    img {
+      width: 100%;
+    }
+  }
+  .synopsis {
+    padding: 90px 200px;
+    h1 {
+      margin-top: 0;
+      font-size: 45px;
+    }
+  }
+  .content {
+    gap: 100px;
+    display: flex;
+    align-items: center;
+    padding: 60px 200px;
+    .content-img {
+      h1 {
+        font-size: 45px;
+        margin-bottom: 12.5px;
+        text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .content-txt {
+      text-align: justify;
+      max-width: 500px;
+      .electronique-btn {
+        padding: 25px 100px;
+        a {
+          color: white;
+          display: flex;
+          justify-content: center;
+          background-color: steelblue;
+          padding: 15px 120px;
+          border-radius: 20px;
+        }
+        a:hover {
+          background-color: #4665b4;
+        }
+      }
+      .prototypage-btn {
+        padding: 25px 100px;
+        a {
+          color: white;
+          display: flex;
+          justify-content: center;
+          background-color: lime;
+          padding: 15px 120px;
+          border-radius: 20px;
+        }
+        a:hover {
+          background-color: #00cc00;
+        }
+      }
+      .impression3D-btn {
+        padding: 25px 100px;
+        a {
+          color: white;
+          display: flex;
+          justify-content: center;
+          background-color: darkmagenta;
+          padding: 15px 120px;
+          border-radius: 20px;
+        }
+        a:hover {
+          background-color: #a800a1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  body .topnav a {
+    font-size: 9.5px !important;
+    text-transform: uppercase;
+  }
+  section {
+    .synopsis {
+      padding: 25px;
+      display: flex;
+      text-align: justify;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .content {
+      gap: 25px !important;
+      align-items: center !important;
+      align-content: center !important;
+      flex-direction: column !important;
+      max-width: 600px;
+      padding: 25px;
+    }
+    .content-img {
+      h1 {
+        margin: 0;
+        margin-top: 50px;
+        text-align: center;
+      }
+    }
+    .content-txt {
+      text-align: justify;
+      display: flex;
+      gap: 25px;
+      max-width: 500px;
+      flex-direction: column;
+    }
+    .electronique-btn {
+      padding: 0 !important;
+    }
+    .prototypage-btn {
+      padding: 0 !important;
+    }
+    .impression3D-btn {
+      padding: 0 !important;
+    }
+  }
+}
