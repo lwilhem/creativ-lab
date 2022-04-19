@@ -20,11 +20,7 @@ class PostsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Posts::class);
     }
-
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
+    
     public function add(Posts $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
@@ -33,10 +29,6 @@ class PostsRepository extends ServiceEntityRepository
         }
     }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
     public function remove(Posts $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);

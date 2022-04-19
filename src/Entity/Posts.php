@@ -2,12 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProjectRepository;
+use App\Repository\PostsRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
-#[ORM\Entity(repositoryClass: ProjectRepository::class)]
-class Project
+#[ORM\Entity(repositoryClass: PostsRepository::class)]
+class Posts
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,22 +19,11 @@ class Project
     #[ORM\Column(type: 'string', length: 255)]
     private $author;
 
-    #[Gedmo\Timestampable(on: 'create')]
-    #[ORM\Column(type: 'datetime')]
-    private $createdAt;
-
-    #[Gedmo\Timestampable(on: 'update')]
-    #[ORM\Column(type: 'datetime')]
-    private $updatedAt;
-
     #[ORM\Column(type: 'text')]
     private $content;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private string $main_picture;
-
-    #[ORM\Column(type: 'array')]
-    private array $project_pictures = [];
+    private $main_picture;
 
     public function getId(): ?int
     {
@@ -66,30 +54,6 @@ class Project
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
     public function getContent(): ?string
     {
         return $this->content;
@@ -110,18 +74,6 @@ class Project
     public function setMainPicture(string $main_picture): self
     {
         $this->main_picture = $main_picture;
-
-        return $this;
-    }
-
-    public function getProjectPictures(): ?array
-    {
-        return $this->project_pictures;
-    }
-
-    public function setProjectPictures(array $project_pictures): self
-    {
-        $this->project_pictures = $project_pictures;
 
         return $this;
     }
