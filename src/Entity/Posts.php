@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PostsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PostsRepository::class)]
 class Posts
@@ -24,6 +25,14 @@ class Posts
 
     #[ORM\Column(type: 'string', length: 255)]
     private $main_picture;
+
+    #[Gedmo\Timestampable(on: 'create')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $createdAt;
+
+    #[Gedmo\Timestampable(on: 'update')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -74,6 +83,30 @@ class Posts
     public function setMainPicture(string $main_picture): self
     {
         $this->main_picture = $main_picture;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

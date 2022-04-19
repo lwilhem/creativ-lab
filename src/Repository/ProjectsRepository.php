@@ -2,26 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Posts;
+use App\Entity\Projects;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Posts|null find($id, $lockMode = null, $lockVersion = null)
- * @method Posts|null findOneBy(array $criteria, array $orderBy = null)
- * @method Posts[]    findAll()
- * @method Posts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Projects|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Projects|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Projects[]    findAll()
+ * @method Projects[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PostsRepository extends ServiceEntityRepository
+class ProjectsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Posts::class);
+        parent::__construct($registry, Projects::class);
     }
 
-    public function add(Posts $entity, bool $flush = true): void
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function add(Projects $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -29,7 +33,11 @@ class PostsRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Posts $entity, bool $flush = true): void
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function remove(Projects $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -38,7 +46,7 @@ class PostsRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Posts[] Returns an array of Posts objects
+    //  * @return Projects[] Returns an array of Projects objects
     //  */
     /*
     public function findByExampleField($value)
@@ -55,7 +63,7 @@ class PostsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Posts
+    public function findOneBySomeField($value): ?Projects
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

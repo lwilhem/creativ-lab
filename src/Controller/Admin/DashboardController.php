@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Posts;
 use App\Entity\Ticket;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -12,6 +13,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
+    /**
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
@@ -19,7 +24,7 @@ class DashboardController extends AbstractDashboardController
         //
         //$adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator->setController(TicketCrudController::class)->generateUrl());
+        return $this->redirect($adminUrlGenerator->setController(PostsCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -31,5 +36,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Posts', 'fa fa-home', Posts::class);
+        yield MenuItem::linkToRoute('homePage', 'fa fa-home', 'homepage');
     }
 }

@@ -29,6 +29,8 @@ Maecenas viverra ipsum nulla. Sed vel aliquet velit, ut commodo justo. Fusce sit
             $post->setAuthor('student n°'.$j);
             $post->setContent($postsContent);
             $post->setMainPicture('public/posts/main/'.$j.'-file.jpg');
+            $post->setCreatedAt(new \DateTime());
+            $post->setUpdatedAt(new \DateTime());
             $manager->persist($post);
         }
         $manager->flush();
