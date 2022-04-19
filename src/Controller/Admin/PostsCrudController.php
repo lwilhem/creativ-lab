@@ -22,11 +22,7 @@ class PostsCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm()->setDisabled(),
             TextField::new('name')->setHelp('Post Title'),
-            TextEditorField::new('content'),
-            ImageField::new('main_picture')
-                ->setBasePath('uploads/images')
-                ->setUploadDir('assets/posts/main')
-                ->setUploadedFileNamePattern('[year]/[month]/[day]/[slug]-[contenthash].[extension]')
+            TextareaField::new('content'),
         ];
     }
 }
