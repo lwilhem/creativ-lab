@@ -9,6 +9,11 @@
 </style>
 
 <div class="example-wrapper">
-    {{ form(test_form) }}
+    {% if form is defined %}
+        {{ form_start(form) }}
+            {{ form_row(form.openedBy) }}
+            {{ form_row(form.file) }}
+        {{ form_end(form) }}
+    {% endif %}
 </div>
 {% endblock %}
