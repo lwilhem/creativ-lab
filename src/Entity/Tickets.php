@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\TicketsRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
@@ -17,21 +16,13 @@ class Tickets
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $openedBy;
-
-    #[ORM\Column(type: 'boolean')]
-    private ?bool $isHandled;
+    #[Assert\NotBlank]
+    #[Assert\Email]
+    private ?string $openedBy;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $file;
-
-    #[Gedmo\Timestampable(on: 'create')]
-    #[ORM\Column(type: 'datetime')]
-    private $createdAt;
-
-    #[Gedmo\Timestampable(on: 'update')]
-    #[ORM\Column(type: 'datetime')]
-    private $closedAt;
+    #[Assert\NotBlank]
+    private ?string $file;
 
     public function getId(): ?int
     {
@@ -50,17 +41,6 @@ class Tickets
         return $this;
     }
 
-    public function getIsHandled(): ?bool
-    {
-        return $this->isHandled;
-    }
-
-    public function setIsHandled(bool $isHandled): self
-    {
-        $this->isHandled = $isHandled;
-
-        return $this;
-    }
 
     public function getFile(): ?string
     {
@@ -70,30 +50,6 @@ class Tickets
     public function setFile(string $file): self
     {
         $this->file = $file;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getClosedAt(): ?\DateTimeInterface
-    {
-        return $this->closedAt;
-    }
-
-    public function setClosedAt(\DateTimeInterface $closedAt): self
-    {
-        $this->closedAt = $closedAt;
 
         return $this;
     }

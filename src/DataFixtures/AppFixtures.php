@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Posts;
-use App\Entity\Ticket;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 

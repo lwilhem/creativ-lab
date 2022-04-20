@@ -5,10 +5,11 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     ticket_directory: '%kernel.project_dir%/public/uploads/tickets'
-    post_directory: '%kernel.project_dir%/public/uploads/posts'
-    project_directory: '%kernel.project_dir%/public/uploads/projects'
 
 services:
+    App\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%ticket_directory%'
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

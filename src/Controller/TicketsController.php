@@ -3,15 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Tickets;
-use App\Form\TicketsType;
+use App\Form\TicketFormType;
 use App\Repository\TicketsRepository;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use App\Service\FileUploader;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
+
 
 
 class TicketsController extends AbstractController
@@ -19,44 +19,34 @@ class TicketsController extends AbstractController
     #[Route('/tickets', name: 'tickets')]
     public function index(TicketsRepository $ticketsRepository): Response
     {
+
         return $this->render('tickets/index.html.twig', [
             'controller_name' => 'TicketsController',
         ]);
     }
 
     #[Route('/tickets', name: 'tickets')]
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function show(Request $request, TicketsRepository $ticketsRepository, FileUploader $fileUploader): Response
     {
-        $ticket = new Tickets();
-        $form = $this->createForm(TicketsType::class, $ticket);
+        $ticket = New Tickets();
+        $form = $this->createForm(TicketFormType::class, $ticket);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            /** @var UploadedFile $ticketFile */
+        if($form->isSubmitted() && $form->isValid()){
             $ticketFile = $form->get('file')->getData();
-
             if($ticketFile){
-                $originalFilename = pathinfo($ticketFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$ticketFile->guessExtension();
-
-                try{
-                    $ticketFile->move(
-                        $this->getParameter('ticket_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e){
-                    throw new FileException($e);
-                }
-                $ticket->setFile($newFilename);
+                $ticketFileName = $fileUploader->upload($ticketFile);
+                $ticket->setFile($ticketFileName);
             }
+            $ticketsRepository->add($ticket);
             return $this->redirectToRoute('homepage');
         }
 
         return $this->renderForm('tickets/index.html.twig', [
-            'form' => $form,
+            'ticket_form' => $form
         ]);
     }
-
 }
+
+// Solutions :  Timeout sur le load du fichier /
+// ['secret' => '6LcqloUfAAAAAL3OX-3b4i1Ilicif-IhNtycdYwi']

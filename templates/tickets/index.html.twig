@@ -1,19 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TicketsController!{% endblock %}
+{% block title %}Donnez vos tickets !{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    {% if form is defined %}
-        {{ form_start(form) }}
-            {{ form_row(form.openedBy) }}
-            {{ form_row(form.file) }}
-        {{ form_end(form) }}
+<!-- 6LcqloUfAAAAAIAS73YsImp2_6r069tjKGbQIwwK -->
+    {% if ticket_form is defined %}
+        <h2>Vos Tickets vont ici !</h2>
+        {{ form(ticket_form) }}
     {% endif %}
-</div>
 {% endblock %}
