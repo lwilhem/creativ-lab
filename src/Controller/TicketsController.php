@@ -7,6 +7,7 @@ use App\Form\TicketFormType;
 use App\Repository\TicketsRepository;
 use App\Service\FileUploader;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\File\Exception\NoFileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -37,7 +38,10 @@ class TicketsController extends AbstractController
             if($ticketFile){
                 $ticketFileName = $fileUploader->upload($ticketFile);
                 $ticket->setFile($ticketFileName);
+            } else {
+                throw new NoFileException();
             }
+
             $ticketsRepository->add($ticket);
             return $this->redirectToRoute('homepage');
         }
