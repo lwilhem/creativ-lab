@@ -1,14 +1,8 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}DevLab | Page d'accueil{% endblock %}
-
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('assets/css/projets/projets.css') }}">
-    <!---- ------ ------>
-    {{ include('website/header.html.twig') }}
+    <link rel="stylesheet" href="{{ asset('assets/css/actualites/actualites.css') }}">
     <!---- ------ ------>
     <div class="carousel">
-        <h1 style="text-align: center!important;margin: 0;font-size: 50px">Projets Récents</h1>
+        <h1 style="text-align: center!important;margin: 0;font-size: 50px">Actualités</h1>
         <ul class="carousel-items">
             <li class="carousel-item">
                 <div class="card">
@@ -63,7 +57,5 @@
         </ul>
     </div>
     <!---- ------ ------>
-    {{ include('website/footer.html.twig') }}
-    <!---- ------ ------>
-    <script rel="script" src="{{ asset('assets/js/index/projets.js') }}"></script>
+    <script rel="script" src="{{ asset('assets/js/actualites/actualites.js') }}"></script>
 {% endblock %}

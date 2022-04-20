@@ -136,7 +136,7 @@
     font-size: 4rem;
   }
   .carousel .carousel-item {
-    flex-basis: 450px;
+    flex-basis: 265px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -160,4 +160,4 @@
   }
 }
 
-/*# sourceMappingURL=projets.css.map */
+/*# sourceMappingURL=actualites.css.map */

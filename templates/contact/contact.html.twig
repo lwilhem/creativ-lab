@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DevLab | Page d'accueil{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/poles/poles.css') }}">
+    <!---- ------ ------>
+    {{ include('website/header.html.twig') }}
+    <!---- ------ ------>
+    <section>
+        <p>TEST PROJETS</p>
+    </section>
+    <!---- ------ ------>
+    {{ include('website/footer.html.twig') }}
+    <!---- ------ ------>
+    <script rel="script" src="{{ asset('assets/js/index/projets.js') }}"></script>
+{% endblock %}
