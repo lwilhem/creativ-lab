@@ -23,7 +23,7 @@ class Posts
     #[ORM\Column(type: 'text')]
     private $content;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $main_picture;
 
     #[Gedmo\Timestampable(on: 'create')]

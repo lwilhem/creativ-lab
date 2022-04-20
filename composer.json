@@ -20,6 +20,7 @@
         "symfony/form": "6.0.*",
         "symfony/framework-bundle": "6.0.*",
         "symfony/http-client": "6.0.*",
+        "symfony/mime": "6.0.*",
         "symfony/proxy-manager-bridge": "6.0.*",
         "symfony/runtime": "^6.0",
         "symfony/security-csrf": "6.0.*",
@@ -82,6 +83,8 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
-        "symfony/maker-bundle": "^1.38"
+        "symfony/maker-bundle": "^1.38",
+        "symfony/stopwatch": "6.0.*",
+        "symfony/web-profiler-bundle": "6.0.*"
     }
 }
