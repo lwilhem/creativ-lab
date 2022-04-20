@@ -3,12 +3,15 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Tickets;
-use App\Kernel;
+use App\Repository\TicketsRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class TicketsCrudController extends AbstractCrudController
 {
@@ -17,20 +20,21 @@ class TicketsCrudController extends AbstractCrudController
         return Tickets::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->showEntityActionsInlined();
+    }
+
     public function configureActions(Actions $actions): Actions
     {
-        $download = Action::new('Download', 'téléchager', 'fa fa-file-invoice')
-            ->displayAsButton()
-            ->linkToUrl(function (Tickets $entity){
-                return $this->getParameter('ticket_directory').$entity->getFile();
-            });
+        $download = Action::new('download', 'téléchager', 'fa fa-file-invoice')
+            ->setLabel(false)
+            ->linkToCrudAction('download');
 
         return $actions
-            ->add(Crud::PAGE_DETAIL, $download)
-            ->disable(Action::EDIT, )
-            ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->remove(Crud::PAGE_INDEX, Action::NEW);
-
+            ->add(Crud::PAGE_INDEX, $download)
+            ->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 
     public function configureFields(string $pageName): iterable
@@ -38,5 +42,13 @@ class TicketsCrudController extends AbstractCrudController
         return [
             TextField::new('openedBy'),
         ];
+    }
+
+    public function download(AdminContext $adminContext, TicketsRepository $ticketsRepository): BinaryFileResponse
+    {
+        $fileId = $adminContext->getRequest()->get('entityId');
+        $tickets = $ticketsRepository->findOneBy(['id' => $fileId]);
+        $filePath = $this->getParameter('kernel.project_dir').'/public/uploads/tickets/'.$tickets->getFile();
+        return new BinaryFileResponse($filePath);
     }
 }

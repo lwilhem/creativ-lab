@@ -19,7 +19,7 @@ class TicketFormType extends AbstractType
         $builder
             ->add('openedBy', EmailType::class, ['label' => 'Votre adresse E-Mail'])
             ->add('file', FileType::class, [
-                'label' => 'Votre Fichier (*.stl)',
+                'label' => 'Votre Fichier (*.zip, *.7z, *.rar)',
                 'constraints' => [(
                     new File([
                         'mimeTypes' => [
