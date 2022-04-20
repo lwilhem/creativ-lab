@@ -33,7 +33,6 @@ body .topnav a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 body .topnav a:hover {
   background-color: salmon;
@@ -56,10 +55,11 @@ body .topnav a:hover {
   }
 
   .topnav a {
+    font-size: 16px !important;
     float: left;
     display: block;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 10px !important;
     text-decoration: none;
   }
 
