@@ -1,4 +1,12 @@
-/* DIV SLIDER */
+section {
+  .main-img {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* DIV SLIDER N°1 */
 .carousel {
   padding: 70px 200px;
 
@@ -155,7 +163,7 @@
     }
 
     .carousel-item {
-      flex-basis: 325px;
+      flex-basis: 345px;
     }
   }
 
@@ -165,7 +173,7 @@
     }
 
     .carousel-item {
-      flex-basis: 450px;
+      flex-basis: 550px;
     }
   }
 
@@ -187,6 +195,231 @@
     padding: 15px !important;
   }
   .carousel-item {
-    flex-basis: 350px !important;
+    flex-basis: 355px !important;
+  }
+}
+
+.filterbar {
+  display: flex;
+  justify-content: space-between;
+  background: gainsboro;
+  padding: 60px 200px;
+  .searchbar {
+    background: white;
+    display: flex;
+    align-items: center;
+    .search {
+      padding: 15px 10px;
+      border: none !important;
+      background: white ;
+    }
+    button {
+      cursor: pointer;
+    }
+    input {
+      width: 450px;
+    }
+  }
+}
+
+
+hr {
+  width: 75%;
+  height: 3px;
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* DIV SLIDER N°1 */
+.carousel {
+  padding: 70px 200px;
+
+  a {
+    color: inherit;
+    transition: 0.25s all ease-in-out;
+  }
+
+  a:visited {
+    color: #3d4852;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    background-color: #3d4852;
+    color: white;
+  }
+
+  a:focus {
+    outline: thin solid #3d4852;
+  }
+
+  a:hover,
+  a:active {
+    outline: 0;
+  }
+
+  a.button {
+    align-items: center;
+    background-color: #3d4852;
+    border: 1px solid #3d4852;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+  }
+
+  a.button:hover,
+  a.button:focus {
+    background-color: #58636F;
+    box-shadow: 0 0 2px 2px #bac6d3;
+  }
+
+  a.button:focus {
+    outline: 1px solid #3d4852;
+  }
+
+  a.button:visited {
+    color: #fff;
+  }
+
+  ul {
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  img {
+    height: auto;
+    margin-bottom: .5rem;
+    max-width: calc(100% + 2rem);
+    position: relative;
+    left: -1rem;
+    right: -1rem;
+  }
+
+  p {
+    margin: 0 0 .5rem;
+  }
+
+  main {
+    padding: 1rem 2rem;
+    margin: auto;
+  }
+
+  header {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  .card {
+    text-align: justify;
+    border: 1px solid #bac6d3;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-item {
+    flex: 1 0 250px;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3d4852;
+    border-radius: 3px;
+  }
+
+  @media screen and (min-width: 576px) {
+    .carousel-item {
+      flex-basis: 300px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 1.125rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+    }
+
+    .carousel-item {
+      flex-basis: 345px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    .carousel-item {
+      flex-basis: 550px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  .projets-carousel {
+    padding: 15px !important;
+  }
+  .projets-carousel-item {
+    flex-basis: 355px !important;
   }
 }

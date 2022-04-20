@@ -19,6 +19,9 @@ body .topnav {
   overflow: hidden;
   background-color: snow;
 }
+body .topnav .menu-img a {
+  padding: 0;
+}
 body .topnav .menu-img img {
   width: 125px;
 }

@@ -18,6 +18,9 @@ body {
     overflow: hidden;
     background-color: snow;
     .menu-img {
+      a {
+        padding: 0;
+      }
       img {
         width: 125px;
       }
