@@ -102,6 +102,9 @@
   margin-left: 1rem;
   scroll-snap-align: start;
 }
+.carousel .carousel-item a div:hover {
+  background-color: #eae9e9;
+}
 .carousel ::-webkit-scrollbar-track {
   background-color: #F5F5F5;
 }
