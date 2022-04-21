@@ -340,6 +340,13 @@ hr {
     scroll-snap-align: start;
   }
 
+  .carousel-item-proto:hover {
+    .card-proto {
+      background-color: #e8e8e8;
+      border-color: #e8e8e8;
+    }
+  }
+
   ::-webkit-scrollbar-track {
     background-color: #F5F5F5;
   }
