@@ -14,16 +14,16 @@ class Projects
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $name;
+    private ?string $name;
 
     #[ORM\Column(type: 'array')]
-    private $contributors = [];
+    private array $contributors = [];
 
     #[ORM\Column(type: 'text')]
-    private $description;
+    private ?string $description;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $main_picture;
+    private ?string $main_picture;
 
     public function getId(): ?int
     {
