@@ -1,0 +1,18 @@
+{% block body %}
+<link rel="stylesheet" href="{{ asset('assets/css/header/header.css') }}">
+<!---- ------ ------>
+    <div class="topnav" id="myTopnav">
+        <div class="menu-img">
+           <a href="{{ path('index') }}" style="background: none!important;"><img src="{{ asset('assets/IMG/header/logo-crea.png') }}"></a>
+        </div>
+        <div class="menu-btn" id="menu-btn">
+            <a href="{{ path('ticket') }}">Ticket</a>
+            <a href="{{ path('index') }}">Accueil</a>
+            <a href="{{ path('index') }}">Pôles</a>
+            <a href="{{ path('projets') }}">Projets</a>
+            <a href="{{ path('contact') }}">Contact</a>
+        </div>
+    </div>
+    <!---- ------ ------>
+    <script rel="script" src="{{ asset('assets/js/header/header.js') }}"></script>
+{% endblock %}

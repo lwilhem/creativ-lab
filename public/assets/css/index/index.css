@@ -1,0 +1,119 @@
+section p {
+  margin: 0;
+}
+section .main-img img {
+  width: 100%;
+}
+section .synopsis {
+  padding: 90px 200px;
+}
+section .synopsis h1 {
+  margin-top: 0;
+  font-size: 45px;
+}
+section .content {
+  gap: 100px;
+  display: flex;
+  align-items: center;
+  padding: 60px 200px;
+}
+section .content .content-img h1 {
+  font-size: 45px;
+  margin-bottom: 12.5px;
+  text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
+}
+section .content .content-img img {
+  width: 100%;
+}
+section .content .content-txt {
+  text-align: justify;
+  max-width: 500px;
+}
+section .content .content-txt .electronique-btn {
+  padding: 25px 100px;
+}
+section .content .content-txt .electronique-btn a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: steelblue;
+  padding: 15px 120px;
+  border-radius: 20px;
+}
+section .content .content-txt .electronique-btn a:hover {
+  background-color: #4665b4;
+}
+section .content .content-txt .prototypage-btn {
+  padding: 25px 100px;
+}
+section .content .content-txt .prototypage-btn a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: lime;
+  padding: 15px 120px;
+  border-radius: 20px;
+}
+section .content .content-txt .prototypage-btn a:hover {
+  background-color: #00cc00;
+}
+section .content .content-txt .impression3D-btn {
+  padding: 25px 100px;
+}
+section .content .content-txt .impression3D-btn a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: darkmagenta;
+  padding: 15px 120px;
+  border-radius: 20px;
+}
+section .content .content-txt .impression3D-btn a:hover {
+  background-color: #a800a1;
+}
+
+@media screen and (max-width: 600px) {
+  section .synopsis {
+    padding: 25px;
+    display: flex;
+    text-align: justify;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  section .synopsis h1 {
+    text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
+  }
+  section .content {
+    gap: 25px !important;
+    align-items: center !important;
+    align-content: center !important;
+    flex-direction: column !important;
+    max-width: 600px;
+    padding: 25px;
+  }
+  section .content-img h1 {
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+  }
+  section .content-txt {
+    text-align: justify;
+    display: flex;
+    gap: 25px;
+    max-width: 500px;
+    flex-direction: column;
+  }
+  section .electronique-btn {
+    padding: 0 !important;
+  }
+  section .prototypage-btn {
+    padding: 0 !important;
+  }
+  section .impression3D-btn {
+    padding: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
