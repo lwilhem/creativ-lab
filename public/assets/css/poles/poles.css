@@ -16,9 +16,11 @@ section .slider {
   margin-bottom: 10%;
 }
 section .tutoriels {
-  padding: 90px 200px;
+  padding: 50px 200px;
 }
 section .tutoriels h1 {
+  margin: 0;
+  margin-bottom: 25px;
   text-align: center;
   font-size: 45px;
   text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);
@@ -30,7 +32,11 @@ section .tutoriels .etapes {
   align-items: center;
   display: flex;
   gap: 300px;
-  margin-bottom: 2.5%;
+}
+section .tutoriels .div-etapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 150px;
 }
 section hr {
   width: 75%;
@@ -148,10 +154,12 @@ img {
     align-items: center;
     display: flex;
     gap: 0 !important;
-    margin-bottom: 2.5%;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column-reverse;
+  }
+  .tutoriels .div-etapes {
+    gap: 50px !important;
   }
 
   hr {
