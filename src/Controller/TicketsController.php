@@ -45,7 +45,7 @@ class TicketsController extends AbstractController
             }
 
             $ticketsRepository->add($ticket);
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('index');
         }
 
         return $this->renderForm('tickets/index.html.twig', [
