@@ -22,6 +22,9 @@ class Projects
     #[ORM\Column(type: 'text')]
     private $description;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $main_picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Projects
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getMainPicture(): ?string
+    {
+        return $this->main_picture;
+    }
+
+    public function setMainPicture(string $main_picture): self
+    {
+        $this->main_picture = $main_picture;
 
         return $this;
     }

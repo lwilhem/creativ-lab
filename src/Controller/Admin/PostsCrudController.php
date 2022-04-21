@@ -25,18 +25,27 @@ class PostsCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
+                ->hideOnIndex()
                 ->hideOnForm(),
             TextField::new('author')
                 ->hideWhenUpdating(),
             DateTimeField::new('createdAt')
-                ->hideOnForm(),
-            DateTimeField::new('updatedAt')
-                ->hideOnForm(),
+                ->hideWhenUpdating()
+                ->renderAsNativeWidget(),
             TextField::new('name')
                 ->setHelp('Titre du posts'),
             TextEditorField::new('content')
                 ->setNumOfRows(50)
                 ->hideOnIndex(),
+            ImageField::new('main_picture')
+                ->setUploadDir('./public/assets/posts/main')
+                ->setBasePath('/assets/posts')
+                ->setUploadedFileNamePattern('.[extension]')
+                ->setFormTypeOptions([
+                    'attr' => [
+                        'accept' => 'image/jpeg, image/png, image/jpg'
+                    ]
+                ])
         ];
     }
 }
