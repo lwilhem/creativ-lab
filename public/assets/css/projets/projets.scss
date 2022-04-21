@@ -6,7 +6,22 @@ section {
   }
 }
 
-/* DIV SLIDER N°1 */
+hr {
+  width: 75%;
+  height: 3px;
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+/* DIV SLIDER */
 .carousel {
   padding: 70px 200px;
 
@@ -163,7 +178,7 @@ section {
     }
 
     .carousel-item {
-      flex-basis: 345px;
+      flex-basis: 325px;
     }
   }
 
@@ -195,45 +210,14 @@ section {
     padding: 15px !important;
   }
   .carousel-item {
-    flex-basis: 355px !important;
+    flex-basis: 350px !important;
   }
 }
 
-.filterbar {
-  display: flex;
-  justify-content: space-between;
-  background: gainsboro;
-  padding: 60px 200px;
-  .searchbar {
-    background: white;
-    display: flex;
-    align-items: center;
-    .search {
-      padding: 15px 10px;
-      border: none !important;
-      background: white ;
-    }
-    button {
-      cursor: pointer;
-    }
-    input {
-      width: 450px;
-    }
-  }
-}
-
-
-hr {
-  width: 75%;
-  height: 3px;
-  border: none;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-/* DIV SLIDER N°1 */
-.carousel {
-  padding: 70px 200px;
+/* ------------------------- */
+/* DIV SLIDER PROTOTYPAGE */
+.carousel-proto {
+  padding: 45px 200px;
 
   a {
     color: inherit;
@@ -325,28 +309,29 @@ hr {
     text-align: center;
   }
 
-  .card {
+  .card-proto {
     text-align: justify;
     border: 1px solid #bac6d3;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0rem 1rem;
     display: flex;
     align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
-  .card-title {
+  .card-title-proto {
     font-size: 15px;
   }
 
-  .carousel-items {
+  .carousel-items-proto {
     display: flex;
     overflow-x: scroll;
     padding: 1rem 0;
     scroll-snap-type: x mandatory;
   }
 
-  .carousel-item {
+  .carousel-item-proto {
     flex: 1 0 250px;
     margin-left: 1rem;
     scroll-snap-align: start;
@@ -367,7 +352,7 @@ hr {
   }
 
   @media screen and (min-width: 576px) {
-    .carousel-item {
+    .carousel-item-proto {
       flex-basis: 300px;
     }
   }
@@ -388,7 +373,7 @@ hr {
     }
 
     .carousel-item {
-      flex-basis: 345px;
+      flex-basis: 325px;
     }
   }
 
@@ -397,8 +382,8 @@ hr {
       font-size: 4rem;
     }
 
-    .carousel-item {
-      flex-basis: 550px;
+    .carousel-item-proto {
+      flex-basis: 265px;
     }
   }
 
@@ -416,10 +401,11 @@ hr {
 }
 
 @media screen and (max-width:600px) {
-  .projets-carousel {
+  .carousel-proto {
     padding: 15px !important;
+    margin-bottom: 35px;
   }
-  .projets-carousel-item {
-    flex-basis: 355px !important;
+  .carousel-item-proto {
+    flex-basis: 350px !important;
   }
 }
