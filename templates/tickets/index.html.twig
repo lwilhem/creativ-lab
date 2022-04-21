@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Donnez vos tickets !{% endblock %}
+
+{% block body %}
+<!-- 6LcqloUfAAAAAIAS73YsImp2_6r069tjKGbQIwwK -->
+    {% if ticket_form is defined %}
+        <h2>Vos Tickets vont ici !</h2>
+        {{ form(ticket_form) }}
+    {% endif %}
+{% endblock %}
