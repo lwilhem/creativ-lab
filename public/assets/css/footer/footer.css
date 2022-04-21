@@ -20,6 +20,8 @@
 }
 .footer .white-footer .white-content .projets-recent .projets-img img {
   width: 90px;
+  object-fit: cover;
+  height: 90px;
 }
 .footer .gray-footer {
   background-color: lightgray;
