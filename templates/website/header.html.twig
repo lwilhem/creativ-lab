@@ -3,10 +3,12 @@
 <!---- ------ ------>
     <div class="topnav" id="myTopnav">
         <div class="menu-img">
-           <a href="{{ path('index') }}" style="background: none!important;"><img src="{{ asset('assets/IMG/header/logo-crea.png') }}"></a>
+           <a href="{{ path('index') }}" style="background: none!important;">
+               <img src="{{ asset('assets/IMG/header/logo-crea.png') }}" alt="">
+           </a>
         </div>
         <div class="menu-btn" id="menu-btn">
-            <a href="{{ path('ticket') }}">Ticket</a>
+            <a href="{{ path('tickets') }}">Ticket</a>
             <a href="{{ path('index') }}">Accueil</a>
             <a href="{{ path('index') }}">Pôles</a>
             <a href="{{ path('projets') }}">Projets</a>
