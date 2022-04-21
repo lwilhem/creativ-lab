@@ -6,7 +6,6 @@ use App\Entity\Tickets;
 use App\Form\TicketFormType;
 use App\Repository\TicketsRepository;
 use App\Service\FileUploader;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\File\Exception\NoFileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +29,9 @@ class TicketsController extends AbstractController
     public function show(Request $request, TicketsRepository $ticketsRepository, FileUploader $fileUploader): Response
     {
         $ticket = New Tickets();
+        $ticket->setIsHandled(false);
+        $ticket->setCreatedAt(new \DateTime());
+        $ticket->setClosedAt(new \DateTime());
         $form = $this->createForm(TicketFormType::class, $ticket);
         $form->handleRequest($request);
 

@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -33,6 +35,7 @@ class TicketsCrudController extends AbstractCrudController
             ->linkToCrudAction('download');
 
         return $actions
+            ->disable(Action::NEW)
             ->add(Crud::PAGE_INDEX, $download)
             ->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
@@ -41,6 +44,9 @@ class TicketsCrudController extends AbstractCrudController
     {
         return [
             TextField::new('openedBy'),
+            BooleanField::new('isHandled'),
+            DateTimeField::new('createdAt')->hideOnForm(),
+            DateTimeField::new('ClosedAt')->hideOnForm(),
         ];
     }
 

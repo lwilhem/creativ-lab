@@ -15,24 +15,24 @@ class Posts
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $name;
+    private ?string $name;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $author;
+    private ?string $author;
 
     #[ORM\Column(type: 'text')]
-    private $content;
+    private ?string $content;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $main_picture;
+    private ?string $main_picture;
 
     #[Gedmo\Timestampable(on: 'create')]
     #[ORM\Column(type: 'datetime', nullable: true)]
-    private $createdAt;
+    private ?\DateTimeInterface $createdAt;
 
     #[Gedmo\Timestampable(on: 'update')]
     #[ORM\Column(type: 'datetime', nullable: true)]
-    private $updatedAt;
+    private ?\DateTimeInterface $updatedAt;
 
     public function getId(): ?int
     {

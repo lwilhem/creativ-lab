@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Posts;
+use App\Entity\Projects;
 use App\Entity\Tickets;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -33,7 +34,7 @@ Maecenas viverra ipsum nulla. Sed vel aliquet velit, ut commodo justo. Fusce sit
             $post->setUpdatedAt(new \DateTime());
             $manager->persist($post);
         }
-        $ticket = new Tickets();
+
         $manager->flush();
     }
 }
