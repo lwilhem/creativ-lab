@@ -10,7 +10,14 @@
         <div class="menu-btn" id="menu-btn">
             <a href="{{ path('tickets') }}">Ticket</a>
             <a href="{{ path('index') }}">Accueil</a>
-            <a href="{{ path('index') }}">Pôles</a>
+            <div class="dropdown">
+                <a>Pôles</a>
+                <div class="dropdown-content">
+                    <a href="{{ path('electronique') }}">Pôle Électronique</a>
+                    <a href="{{ path('prototypage') }}">Pôle Prototypage</a>
+                    <a href="{{ path('impression') }}">Pôle 3D</a>
+                </div>
+            </div>
             <a href="{{ path('projets') }}">Projets</a>
         </div>
     </div>
