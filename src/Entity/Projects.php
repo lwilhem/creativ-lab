@@ -25,6 +25,10 @@ class Projects
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $main_picture;
 
+    #[ORM\ManyToOne(targetEntity: ProjectType::class, inversedBy: 'projects')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $type;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +78,18 @@ class Projects
     public function setMainPicture(string $main_picture): self
     {
         $this->main_picture = $main_picture;
+
+        return $this;
+    }
+
+    public function getType(): ?ProjectType
+    {
+        return $this->type;
+    }
+
+    public function setType(?ProjectType $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

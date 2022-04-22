@@ -76,6 +76,15 @@ class Posts
         return $this->main_picture;
     }
 
+    public function getMainPictureUrl(): ?string
+    {
+        if (str_contains($this->main_picture, '/')) {
+            return $this->main_picture;
+        }
+
+        return sprintf('assets/posts/main/%s', $this->main_picture);
+    }
+
     public function setMainPicture(string $main_picture): self
     {
         $this->main_picture = $main_picture;

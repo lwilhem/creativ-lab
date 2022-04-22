@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectsListController!{% endblock %}
+
+{% block body %}
+    {% if data is defined %}
+        {% for project in data %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
