@@ -1,0 +1,352 @@
+section .main-img img {
+  width: 100%;
+}
+
+hr {
+  width: 75%;
+  height: 3px;
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+/* DIV SLIDER */
+.carousel {
+  padding: 70px 200px;
+}
+.carousel a {
+  color: inherit;
+  transition: 0.25s all ease-in-out;
+}
+.carousel a:visited {
+  color: #3d4852;
+}
+.carousel a:hover,
+.carousel a:focus,
+.carousel a:active {
+  background-color: #3d4852;
+  color: white;
+}
+.carousel a:focus {
+  outline: thin solid #3d4852;
+}
+.carousel a:hover,
+.carousel a:active {
+  outline: 0;
+}
+.carousel a.button {
+  align-items: center;
+  background-color: #3d4852;
+  border: 1px solid #3d4852;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+.carousel a.button:hover,
+.carousel a.button:focus {
+  background-color: #58636F;
+  box-shadow: 0 0 2px 2px #bac6d3;
+}
+.carousel a.button:focus {
+  outline: 1px solid #3d4852;
+}
+.carousel a.button:visited {
+  color: #fff;
+}
+.carousel ul {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.carousel li {
+  display: inline-block;
+}
+.carousel svg {
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.carousel img {
+  height: auto;
+  margin-bottom: 0.5rem;
+  max-width: calc(100% + 2rem);
+  position: relative;
+  left: -1rem;
+  right: -1rem;
+}
+.carousel p {
+  margin: 0 0 0.5rem;
+}
+.carousel main {
+  padding: 1rem 2rem;
+  margin: auto;
+}
+.carousel header {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.carousel .card {
+  box-shadow: -1px 1px 4px 0px rgba(133, 133, 133, 0.62);
+  background: whitesmoke;
+  text-align: justify;
+  border: 1px solid whitesmoke;
+  padding: 0rem 1rem;
+  display: flex;
+  margin: 0px 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.carousel .card-title {
+  font-size: 15px;
+}
+.carousel .carousel-items {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.carousel .carousel-item {
+  flex: 1 0 250px;
+  margin-left: 1rem;
+  scroll-snap-align: start;
+}
+.carousel ::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+.carousel ::-webkit-scrollbar {
+  height: 6px;
+  background-color: #F5F5F5;
+}
+.carousel ::-webkit-scrollbar-thumb {
+  background-color: #3d4852;
+  border-radius: 3px;
+}
+@media screen and (min-width: 576px) {
+  .carousel .carousel-item {
+    flex-basis: 300px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .carousel body,
+.carousel button,
+.carousel input,
+.carousel select,
+.carousel optgroup,
+.carousel textarea {
+    font-size: 1.125rem;
+  }
+  .carousel h1 {
+    font-size: 2.75rem;
+  }
+  .carousel .carousel-item {
+    flex-basis: 325px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .carousel h1 {
+    font-size: 4rem;
+  }
+  .carousel .carousel-item {
+    flex-basis: 550px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .carousel body,
+.carousel button,
+.carousel input,
+.carousel select,
+.carousel optgroup,
+.carousel textarea {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    padding: 15px !important;
+  }
+
+  .carousel-item {
+    flex-basis: 350px !important;
+  }
+}
+/* ------------------------- */
+/* DIV SLIDER PROTOTYPAGE */
+.carousel-proto {
+  padding: 45px 200px;
+}
+.carousel-proto a {
+  color: inherit;
+  transition: 0.25s all ease-in-out;
+}
+.carousel-proto a:visited {
+  color: #3d4852;
+}
+.carousel-proto a:hover,
+.carousel-proto a:focus,
+.carousel-proto a:active {
+  background-color: #3d4852;
+  color: white;
+}
+.carousel-proto a:focus {
+  outline: thin solid #3d4852;
+}
+.carousel-proto a:hover,
+.carousel-proto a:active {
+  outline: 0;
+}
+.carousel-proto a.button {
+  align-items: center;
+  background-color: #3d4852;
+  border: 1px solid #3d4852;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+.carousel-proto a.button:hover,
+.carousel-proto a.button:focus {
+  background-color: #58636F;
+  box-shadow: 0 0 2px 2px #bac6d3;
+}
+.carousel-proto a.button:focus {
+  outline: 1px solid #3d4852;
+}
+.carousel-proto a.button:visited {
+  color: #fff;
+}
+.carousel-proto ul {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.carousel-proto li {
+  display: inline-block;
+}
+.carousel-proto svg {
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.carousel-proto img {
+  height: auto;
+  margin-bottom: 0.5rem;
+  max-width: calc(100% + 2rem);
+  position: relative;
+  left: -1rem;
+  right: -1rem;
+}
+.carousel-proto p {
+  margin: 0 0 0.5rem;
+}
+.carousel-proto main {
+  padding: 1rem 2rem;
+  margin: auto;
+}
+.carousel-proto header {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+.carousel-proto .card-proto {
+  text-align: justify;
+  border: 1px solid snow;
+  background: snow;
+  padding: 0rem 1rem;
+  display: flex;
+  margin: 0px 5px;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.carousel-proto .card-title-proto {
+  font-size: 15px;
+}
+.carousel-proto .carousel-items-proto {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.carousel-proto .carousel-item-proto {
+  flex: 1 0 250px;
+  margin-left: 1rem;
+  scroll-snap-align: start;
+}
+.carousel-proto .carousel-item-proto:hover .card-proto {
+  background-color: #e8e8e8;
+  border-color: #e8e8e8;
+}
+.carousel-proto ::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+.carousel-proto ::-webkit-scrollbar {
+  height: 6px;
+  background-color: #F5F5F5;
+}
+.carousel-proto ::-webkit-scrollbar-thumb {
+  background-color: #3d4852;
+  border-radius: 3px;
+}
+@media screen and (min-width: 576px) {
+  .carousel-proto .carousel-item-proto {
+    flex-basis: 300px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .carousel-proto body,
+.carousel-proto button,
+.carousel-proto input,
+.carousel-proto select,
+.carousel-proto optgroup,
+.carousel-proto textarea {
+    font-size: 1.125rem;
+  }
+  .carousel-proto h1 {
+    font-size: 2.75rem;
+  }
+  .carousel-proto .carousel-item {
+    flex-basis: 325px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .carousel-proto h1 {
+    font-size: 4rem;
+  }
+  .carousel-proto .carousel-item-proto {
+    flex-basis: 265px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .carousel-proto body,
+.carousel-proto button,
+.carousel-proto input,
+.carousel-proto select,
+.carousel-proto optgroup,
+.carousel-proto textarea {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-proto {
+    padding: 15px !important;
+    margin-bottom: 35px;
+  }
+
+  .carousel-item-proto {
+    flex-basis: 350px !important;
+  }
+}
+
+/*# sourceMappingURL=projets.css.map */

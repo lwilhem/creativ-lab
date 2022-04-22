@@ -1,0 +1,107 @@
+.form-ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 40px;
+  background: whitesmoke;
+  border-radius: 40px;
+  border: darkmagenta 5px solid;
+}
+
+.form-wrapper {
+  margin-top: 75px;
+  background-color: gold;
+  display: flex;
+  gap: 200px;
+  justify-content: center;
+  padding: 100px 100px;
+}
+
+.form-title-wrapper {
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 50px !important;
+  text-align: center;
+  margin-top: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: steelblue 4px solid;
+}
+
+.inputs-form-ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-wrapper {
+  margin-bottom: 50px;
+  margin-top: 0;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-wrapper input {
+  margin-top: 5px;
+  border: lime 4px solid;
+  border-radius: 5px;
+  width: 95%;
+  padding: 15px;
+}
+.input-wrapper textarea:focus, .input-wrapper input:focus {
+  outline: none;
+}
+
+.file-upload {
+  margin-top: 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+.file-upload div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.file-upload div input {
+  margin-top: 5px;
+  background: white;
+  border: lime 4px solid;
+  border-radius: 5px;
+  width: 95%;
+  padding: 15px;
+}
+
+.submit-btn button {
+  margin-top: 50px;
+  border-radius: 13px;
+  background: steelblue;
+  cursor: pointer;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-ticket {
+    min-width: 700px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-wrapper {
+    flex-direction: column;
+    padding: 30px 12px;
+    gap: 30px !important;
+  }
+  .form-wrapper h2 {
+    margin-top: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=tickets.css.map */

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Creativ'Lab - Blog{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/posts/posts-list.css') }}">
+    {% include 'website/header.html.twig' %}
+    <section class="post-list-wrapper">
+        {% for post in posts %}
+            <a href="{{ path('single_post', {'id': post.id}) }}">
+                <div class="post-wrapper">
+                    <div style="background-image: url('{{ asset(post.mainPictureUrl) }}')" class="post-image"></div>
+                    <div class="post-char-wrapper">
+                        <h3>{{ post.name }}</h3>
+                        <span>{{ post.author }}</span>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+    {% include 'website/footer.html.twig' %}
+{% endblock %}
+

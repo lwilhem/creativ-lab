@@ -1,0 +1,202 @@
+/* DIV SLIDER */
+.carousel {
+  padding: 70px 200px;
+
+  a {
+    color: inherit;
+    transition: 0.25s all ease-in-out;
+  }
+
+  a:visited {
+    color: #3d4852;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    background-color: #3d4852;
+    color: white;
+  }
+
+  a:focus {
+    outline: thin solid #3d4852;
+  }
+
+  a:hover,
+  a:active {
+    outline: 0;
+  }
+
+  a.button {
+    align-items: center;
+    background-color: #3d4852;
+    border: 1px solid #3d4852;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+  }
+
+  a.button:hover,
+  a.button:focus {
+    background-color: #58636F;
+    box-shadow: 0 0 2px 2px #bac6d3;
+  }
+
+  a.button:focus {
+    outline: 1px solid #3d4852;
+  }
+
+  a.button:visited {
+    color: #fff;
+  }
+
+  ul {
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  img {
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    max-width: calc(100% + 2rem);
+    position: relative;
+    left: -1rem;
+    right: -1rem;
+  }
+
+  p {
+    max-height: 250px;
+    margin: 0 0 0.5rem;
+    overflow: hidden;
+  }
+
+  main {
+    padding: 1rem 2rem;
+    margin: auto;
+  }
+
+  header {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  .card {
+    box-shadow: -1px 1px 4px 0px rgb(133 133 133 / 62%);
+    background: whitesmoke;
+    text-align: justify;
+    border: 1px solid whitesmoke;
+    padding: 0rem 1rem;
+    display: flex;
+    margin: 0px 5px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-item {
+    flex: 1 0 250px;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+    a {
+      div:hover {
+        background-color: #eae9e9;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3d4852;
+    border-radius: 3px;
+  }
+
+  @media screen and (min-width: 576px) {
+    .carousel-item {
+      flex-basis: 300px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 1.125rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+    }
+
+    .carousel-item {
+      flex-basis: 325px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    .carousel-item {
+      flex-basis: 265px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  .carousel {
+    padding: 15px !important;
+  }
+  .carousel-item {
+    flex-basis: 350px !important;
+  }
+}

@@ -1,0 +1,24 @@
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/actualites/actualites.css') }}">
+    <!---- ------ ------>
+    <div class="carousel">
+        <h1 style="text-align: center!important;margin: 0;font-size: 50px">Actualités</h1>
+        <ul class="carousel-items">
+            {% for post in posts %}
+                <li class="carousel-item">
+                    <a href="{{ path('projets') }}">
+                        <div class="card">
+                            <img src="/assets/posts/main/{{ post.mainPicture }}"/>
+                            <div class="card-content">
+                                <h3 style="text-align: center;margin: 10px">{{ post.name }}</h3>
+                                <p>{{ post.content }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!---- ------ ------>
+    <script rel="script" src="{{ asset('assets/js/actualites/actualites.js') }}"></script>
+{% endblock %}

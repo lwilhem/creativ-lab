@@ -1,0 +1,169 @@
+section {
+  .main-img {
+    img {
+      width: 100%;
+    }
+  }
+  .informations {
+    padding: 90px 200px;
+    h1 {
+      text-align: center;
+      font-size: 45px;
+      text-shadow: 2px 2px 4px rgb(133 133 133 / 62%);
+    }
+    p {
+      text-align: justify;
+    }
+  }
+  .slider {
+    margin-bottom: 10%;
+  }
+  .tutoriels {
+    padding: 50px 200px;
+    h1 {
+      margin: 0;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 45px;
+      text-shadow: 2px 2px 4px rgb(133 133 133 / 62%);
+    }
+    p {
+      text-align: justify;
+    }
+    .etapes {
+      align-items: center;
+      display: flex;
+      gap: 300px;
+    }
+    .div-etapes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 150px;
+    }
+  }
+  hr {
+    width: 75%;
+    height: 3px;
+    border: none;
+  }
+}
+
+
+/* SLIDER DES IMAGES */
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+@media screen and (max-width:600px) {
+  .informations {
+    padding: 15px !important;
+  }
+  .tutoriels {
+    padding: 0 !important;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 25px;
+    }
+
+    .etapes {
+      align-items: center;
+      display: flex;
+      gap: 0 !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+
+    .div-etapes {
+      gap: 50px !important;
+    }
+  }
+  hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .etapes-detail {
+    padding: 5px 25px;
+  }
+  .slider {
+    padding: 10px 20px;
+  }
+}
