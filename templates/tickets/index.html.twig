@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Donnez vos tickets !{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/tickets/tickets.css') }}">
+    {{ include('website/header.html.twig') }}
+
+<section class="form-wrapper">
+        <div class="form-title-wrapper">
+            <span class="line"></span>
+            <h2 class="form-title">
+                Vos Tickets vont ici !
+            </h2>
+            <span class="line"></span>
+        </div>
+        {% if ticket_form is defined %}`
+            {{ form_start(ticket_form, {'attr': {'id': 'form'} }) }}
+            <div class="input-wrapper">
+                {{ form_label(ticket_form.openedBy, 'Ton adresse E-Mail !') }}
+                {{ form_widget(ticket_form.openedBy, {'attr': {'class': 'email-input'}}) }}
+            </div>
+            {{ form_row(ticket_form.file) }}
+
+            {{ form_row(ticket_form.submit, {'attr': {'class': "g-recaptcha",'id': 'ticket_submit', 'data-callback': 'onSubmit', 'data-action': 'submit', 'data-sitekey': "6LcqloUfAAAAAIAS73YsImp2_6r069tjKGbQIwwK"} }) }}
+            {{ form_end(ticket_form) }}
+        {% endif %}
+    </section>
+    {{ include('website/footer.html.twig') }}
+    {% block javascripts %}
+        <!--
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("ticket_form").submit();
+            }
+        </script>
+        -->
+    {% endblock %}
+{% endblock %}
