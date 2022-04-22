@@ -69,7 +69,7 @@
             <ul class="carousel-items-proto">
                 {% for proto in data_proto %}
                     <li class="carousel-item-proto">
-                        <a href="{{ path('detailed_page') }}">
+                        <a href="{{ path('detailed_page', {'id': proto.id} ) }}">
                             <div class="card-proto">
                                 <div>
                                     <img src="{{ asset(proto.mainPictureUrl) }}"  alt="#"/>
@@ -88,7 +88,7 @@
             <ul class="carousel-items-proto">
                 {% for elec in data_elec %}
                     <li class="carousel-item-proto">
-                        <a href="{{ path('detailed_page') }}">
+                        <a href="{{ path('detailed_page', {'id': elec.id}) }}">
                             <div class="card-proto">
                                 <div>
                                     <img src="{{ asset(elec.mainPictureUrl) }}" />
@@ -107,7 +107,7 @@
             <ul class="carousel-items-proto">
                 {% for print in data_print %}
                     <li class="carousel-item-proto">
-                        <a href="{{ path('detailed_page') }}">
+                        <a href="{{ path('detailed_page', {'id': print.id} ) }}">
                             <div class="card-proto">
                                 <div>
                                     <img src="{{ asset(print.mainPictureUrl) }}" />
