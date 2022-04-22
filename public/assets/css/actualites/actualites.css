@@ -67,7 +67,9 @@
   right: -1rem;
 }
 .carousel p {
+  max-height: 250px;
   margin: 0 0 0.5rem;
+  overflow: hidden;
 }
 .carousel main {
   padding: 1rem 2rem;
