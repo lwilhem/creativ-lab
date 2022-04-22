@@ -80,7 +80,9 @@
   }
 
   p {
-    margin: 0 0 .5rem;
+    max-height: 250px;
+    margin: 0 0 0.5rem;
+    overflow: hidden;
   }
 
   main {

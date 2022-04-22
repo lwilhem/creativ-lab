@@ -17,7 +17,7 @@ class TicketFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('openedBy', EmailType::class, ['label' => 'Votre adresse E-Mail'])
+            ->add('openedBy', EmailType::class, ['label' => 'Adresse Mail'])
             ->add('file', FileType::class, [
                 'label' => 'Votre Fichier (*.zip, *.7z, *.rar)',
                 'constraints' => [(

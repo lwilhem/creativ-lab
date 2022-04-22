@@ -4,72 +4,19 @@
     <div class="carousel">
         <h1 style="text-align: center!important;margin: 0;font-size: 50px">Actualités</h1>
         <ul class="carousel-items">
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1081" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
+            {% for post in posts %}
+                <li class="carousel-item">
+                    <a href="{{ path('projets') }}">
+                        <div class="card">
+                            <img src="/assets/posts/main/{{ post.mainPicture }}"/>
+                            <div class="card-content">
+                                <h3 style="text-align: center;margin: 10px">{{ post.name }}</h3>
+                                <p>{{ post.content }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1082" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1083" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1084" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1085" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="carousel-item">
-                <a href="{{ path('projets') }}">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/user/c_v_r/1920x1086" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris.</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
     <!---- ------ ------>
