@@ -1,40 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Donnez vos tickets !{% endblock %}
+{% block title %}Creativ'Lab | Ticket{% endblock %}
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('assets/css/tickets/tickets.css') }}">
     {{ include('website/header.html.twig') }}
-
-<section class="form-wrapper">
+    <!---- ------ ------>
+    <section class="form-wrapper">
         <div class="form-title-wrapper">
-            <span class="line"></span>
             <h2 class="form-title">
-                Vos Tickets vont ici !
+                Title
             </h2>
-            <span class="line"></span>
+            <p style="text-align: justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat sagittis et non tincidunt mauris pretium, congue. Orci, consequat fermentum nisi sapien dolor, gravida. Sapien, morbi faucibus massa phasellus pulvinar id dictum. Sagittis pharetra erat tellus urna, pharetra, nulla in. Velit purus ipsum est vestibulum nisl, quis purus. Donec tincidunt urna phasellus quam eget. Tellus eu augue feugiat aliquet eu volutpat. Id tortor sed aliquam in nulla. Eu quisque posuere mi facilisis at aenean sit neque bibendum. Sollicitudin gravida dignissim neque turpis non aliquet eget sed ac.
+            </p>
         </div>
-        {% if ticket_form is defined %}`
-            {{ form_start(ticket_form, {'attr': {'id': 'form'} }) }}
-            <div class="input-wrapper">
-                {{ form_label(ticket_form.openedBy, 'Ton adresse E-Mail !') }}
-                {{ form_widget(ticket_form.openedBy, {'attr': {'class': 'email-input'}}) }}
-            </div>
-            {{ form_row(ticket_form.file) }}
+        <div class="form-ticket">
+            {% if ticket_form is defined %}
+                <h1>Form</h1>
+                <div class="inputs-form-ticket">
+                    {{ form_start(ticket_form, {'attr': {'id': 'form'} }) }}
+                    <div class="input-wrapper">
+                        {{ form_label(ticket_form.openedBy, '') }}
+                        {{ form_widget(ticket_form.openedBy, {'attr': {'class': 'email-input'}}) }}
+                    </div>
+                    <div class="file-upload">
+                        {{ form_row(ticket_form.file) }}
+                    </div>
+                </div>
 
-            {{ form_row(ticket_form.submit, {'attr': {'class': "g-recaptcha",'id': 'ticket_submit', 'data-callback': 'onSubmit', 'data-action': 'submit', 'data-sitekey': "6LcqloUfAAAAAIAS73YsImp2_6r069tjKGbQIwwK"} }) }}
-            {{ form_end(ticket_form) }}
-        {% endif %}
+                <div class="submit-btn">
+                    {{ form_row(ticket_form.submit, {'attr': {'class': "g-recaptcha",'id': 'ticket_submit', 'data-callback': 'onSubmit', 'data-action': 'submit', 'data-sitekey': "6LcqloUfAAAAAIAS73YsImp2_6r069tjKGbQIwwK"} }) }}
+                    {{ form_end(ticket_form) }}
+                </div>
+            {% endif %}
+        </div>
     </section>
+    <!---- ------ ------>
     {{ include('website/footer.html.twig') }}
-    {% block javascripts %}
-        <!--
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-            function onSubmit(token) {
-                document.getElementById("ticket_form").submit();
-            }
-        </script>
-        -->
-    {% endblock %}
 {% endblock %}
