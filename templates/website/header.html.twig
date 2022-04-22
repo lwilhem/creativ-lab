@@ -13,6 +13,15 @@
             <a href="{{ path('posts_list') }}">Blog</a>
             <a href="{{ path('projects_list') }}">Projets</a>
             <a href="{{ path('app_login') }}">Connexion</a>
+            <div class="dropdown">
+                <a>Pôles</a>
+                <div class="dropdown-content">
+                    <a href="{{ path('electronique') }}">Pôle Électronique</a>
+                    <a href="{{ path('prototypage') }}">Pôle Prototypage</a>
+                    <a href="{{ path('impression') }}">Pôle 3D</a>
+                </div>
+            </div>
+            <a href="{{ path('projets') }}">Projets</a>
         </div>
     </div>
     <!---- ------ ------>
