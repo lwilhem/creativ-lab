@@ -8,7 +8,18 @@
     {{ include('website/header.html.twig') }}
     <!---- ------ ------>
     <section>
-        <p>TEST DETAILED</p>
+        {% if data is defined %}
+            <span>{{ data.name }}</span>
+            <div style="background-color: url('{{ asset(data.mainPictureUrl) }}')"></div>
+            <ul>
+                {% for cont in data.contributors %}
+                    <li>{{ cont }}</li>
+                {% endfor %}
+            </ul>
+            <div>
+                {{ data.description }}
+            </div>
+        {% endif %}
     </section>
     <!---- ------ ------>
     {{ include('website/footer.html.twig') }}
