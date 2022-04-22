@@ -3,9 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Admin;
-use App\Entity\Posts;
-use App\Entity\Projects;
-use App\Entity\Tickets;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -20,7 +17,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $admin = new Admin();
-        $admin->setUsername('Creativ Lab');
+        $admin->setUsername("Creativ'Lab");
         $admin->setRoles(['ROLE_ADMIN']);
         $password = $this->passwordHasher->hashPassword($admin, 'password');
         $admin->setPassword($password);
