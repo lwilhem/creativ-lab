@@ -12,6 +12,7 @@ class ProjetsController extends AbstractController
     #[Route('/projets', name: 'projets')]
     public function index(ProjectsRepository $projectsRepository): Response
     {
+        $allproject = $projectsRepository->findAll();
         $elec = $projectsRepository->findBy(['type' => 1]);
         $proto = $projectsRepository->findBy(['type' => 2]);
         $print = $projectsRepository->findBy(['type' => 3]);
@@ -20,6 +21,7 @@ class ProjetsController extends AbstractController
             'data_elec' => $elec,
             'data_proto' => $proto,
             'data_print' => $print,
+            'all_projects' => $allproject
         ]);
     }
 }
