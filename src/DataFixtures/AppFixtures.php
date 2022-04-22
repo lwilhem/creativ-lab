@@ -46,6 +46,7 @@ class AppFixtures extends Fixture
         for ($j = 1; $j <= 3; $j++){
             $type = new ProjectType();
             $type->setName($typeList[$j - 1]);
+            $manager->persist($type);
             for($g = 1; $g <= 5; $g ++)
             {
                 $project = new Projects();
@@ -54,8 +55,9 @@ class AppFixtures extends Fixture
                 $project->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit lorem, eleifend at iaculis et, interdum non lorem. Sed sem erat, feugiat vel turpis eu, mollis cursus ante. Nulla sit amet quam non justo ultrices porta. Praesent vel arcu orci. Cras in interdum augue, ut finibus elit. Etiam ultrices dolor risus, sed interdum tortor rutrum eget. Maecenas pulvinar, dui in malesuada lacinia, eros nisl facilisis ligula, non finibus ante nisl rutrum eros. Pellentesque a condimentum eros. Mauris eget bibendum lorem. Aenean congue odio eget ante vulputate, id maximus nibh tincidunt. Phasellus at dui enim. Nunc varius mauris lorem, vel tincidunt augue posuere ut. Morbi varius convallis maximus. Mauris at vulputate elit. Nam sit amet purus efficitur, pharetra lacus at, vestibulum sapien.');
                 $project->setContributors($contributor);
                 $project->setType($type);
+                $manager->persist($project);
             }
         }
-
+        $manager->flush();
     }
 }

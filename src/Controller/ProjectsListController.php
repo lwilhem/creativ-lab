@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ProjectsRepository;
+use App\Repository\ProjectTypeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProjectsListController extends AbstractController
 {
     #[Route('/projects/list', name: 'projects_list')]
-    public function index(ProjectsRepository $projectsRepository): Response
+    public function index(ProjectsRepository $projectsRepository, ProjectTypeRepository $projectTypeRepository): Response
     {
         $allProjects = $projectsRepository->findAll();
 
