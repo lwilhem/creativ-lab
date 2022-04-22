@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Admin;
+use App\Entity\Posts;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -23,5 +24,19 @@ class AppFixtures extends Fixture
         $admin->setPassword($password);
         $manager->persist($admin);
         $manager->flush();
+
+        for($i = 1; $i <= 50; $i++)
+        {
+            $posts = new Posts();
+            $posts->setName('Article n°'.$i);
+            $posts->setCreatedAt(New \DateTime());
+            $posts->setUpdatedAt(New \DateTime());
+            $posts->setAuthor("Creativ'Lab");
+            $posts->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elit lorem, eleifend at iaculis et, interdum non lorem. Sed sem erat, feugiat vel turpis eu, mollis cursus ante. Nulla sit amet quam non justo ultrices porta. Praesent vel arcu orci. Cras in interdum augue, ut finibus elit. Etiam ultrices dolor risus, sed interdum tortor rutrum eget. Maecenas pulvinar, dui in malesuada lacinia, eros nisl facilisis ligula, non finibus ante nisl rutrum eros. Pellentesque a condimentum eros. Mauris eget bibendum lorem. Aenean congue odio eget ante vulputate, id maximus nibh tincidunt. Phasellus at dui enim. Nunc varius mauris lorem, vel tincidunt augue posuere ut. Morbi varius convallis maximus. Mauris at vulputate elit. Nam sit amet purus efficitur, pharetra lacus at, vestibulum sapien.');
+            $posts->setMainPicture('post-placeholder.png');
+            $manager->persist($posts);
+        }
+        $manager->flush();
+
     }
 }

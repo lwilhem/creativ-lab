@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    {% if data is defined %}
+        <span>{{ data.name }}</span>
+    {% endif %}
+{% endblock %}

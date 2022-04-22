@@ -39,8 +39,8 @@ class PostsCrudController extends AbstractCrudController
                 ->hideOnIndex(),
             ImageField::new('main_picture')
                 ->setUploadDir('./public/assets/posts/main')
-                ->setBasePath('/assets/posts')
-                ->setUploadedFileNamePattern('.[extension]')
+                ->setBasePath('/posts/images')
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->setFormTypeOptions([
                     'attr' => [
                         'accept' => 'image/jpeg, image/png, image/jpg'
