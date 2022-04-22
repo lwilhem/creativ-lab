@@ -15,52 +15,16 @@
             <h1 style="text-align: center!important;margin: 0;font-size: 50px;text-shadow: 2px 2px 4px rgba(133, 133, 133, 0.62);">Projets Récents</h1>
             <ul class="carousel-items">
                 {% for pro in all_projects %}
+                    <li class="carousel-item">
+                        <div class="card">
+                            <img src="/{{ pro.mainPictureUrl }}" />
+                            <div class="card-content">
+                                <h3 style="text-align: center;margin: 10px">{{ pro.name }}</h3>
+                                <p>{{ pro.description }}</p>
+                            </div>
+                        </div>
+                    </li>
                 {% endfor %}
-                <li class="carousel-item">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/random/1920x1080/?img=1" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris. Morbi a tempor enim, quis congue dui. Vestibulum aliquam pulvinar ipsum quis ullamcorper. Donec varius egestas lorem, fermentum dapibus arcu elementum nec.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/random/1920x1081/?img=1" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris. Morbi a tempor enim, quis congue dui. Vestibulum aliquam pulvinar ipsum quis ullamcorper. Donec varius egestas lorem, fermentum dapibus arcu elementum nec.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/random/1920x1082/?img=1" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris. Morbi a tempor enim, quis congue dui. Vestibulum aliquam pulvinar ipsum quis ullamcorper. Donec varius egestas lorem, fermentum dapibus arcu elementum nec.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/random/1920x1083/?img=1" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris. Morbi a tempor enim, quis congue dui. Vestibulum aliquam pulvinar ipsum quis ullamcorper. Donec varius egestas lorem, fermentum dapibus arcu elementum nec.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/random/1920x1084/?img=1" />
-                        <div class="card-content">
-                            <h3 style="text-align: center;margin: 10px">Title</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat velit nunc, in mollis turpis accumsan nec. Quisque justo ante, fermentum ac elit sit amet, rhoncus semper mauris. Morbi a tempor enim, quis congue dui. Vestibulum aliquam pulvinar ipsum quis ullamcorper. Donec varius egestas lorem, fermentum dapibus arcu elementum nec.</p>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </div>
         <div>
